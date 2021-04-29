@@ -66,3 +66,24 @@ body {
   margin-bottom: 1rem;
   white-space: pre-wrap;
 }
+
+$table-border-color: #e9ebec !default;
+
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all; // For Firefox to horizontally scroll wider tables.
+  -webkit-overflow-scrolling: touch;
+
+  th {
+    font-weight: bold;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 1rem;
+    border: 1px solid $table-border-color;
+  }
+}
