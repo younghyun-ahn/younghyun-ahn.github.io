@@ -22,9 +22,6 @@ gRPC has SSL/TLS integration and promotes the use of SSL/TLS to authenticate the
 ## Openssl
 
 {% highlight bash %}
-# Private files: ca.key, server.key, sever.pem, server.crt
-# "Share" files: ca.crt (need by the client), server.csr (need by th CA)
-
 # Changes these CN's to match your hosts in your envrioment if need.
 SERVER_CN=localhost
 

@@ -19,9 +19,9 @@ layout: page
 
   {% assign date_format = site.minima_reboot.date_format_short | default: "%b %-d" %}
   <tr>
-    <td class="text-right align-top text-truncate"><time class="text-secondary" datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: date_format }}</time></td>
-    <td class="text-center align-top px-1">|</td>
-    <td class="text-left align-top"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a></td>
+    <td class="text-right align-top text-truncate" style="padding: 0rem 0rem; border: 0px"><time class="text-secondary" datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: date_format }}</time></td>
+    <td class="text-center align-top px-1" style="padding: 0rem 0rem; border: 0px">|</td>
+    <td class="text-left align-top" style="padding: 0rem 0rem; border: 0px"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a></td>
   </tr>
 
   {% if forloop.last %}
