@@ -99,4 +99,4 @@ gRPC can be used by any language. Because the code can be generated for any lang
  * gRPC is API oriented, insted of Resource Oriented like REST
 
 
-Check out the [gRPC and gRPC Reflection](https://medium.com/ruangguru-engineering/grpc-and-grpc-reflection-8cc1e395adb3), [REST v. gRPC](https://sites.google.com/dreamus.io/help-dreamus-io/home) for more info.
+Check out the [gRPC and gRPC Reflection](https://medium.com/ruangguru-engineering/grpc-and-grpc-reflection-8cc1e395adb3), [REST v. gRPC](https://husobee.github.io/golang/rest/grpc/2016/05/28/golang-rest-v-grpc.html) for more info.
