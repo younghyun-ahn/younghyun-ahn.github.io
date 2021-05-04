@@ -91,3 +91,59 @@ All fields, if not specified or unknown, will take a default value
 * If you know all the values a field can take in advance, you can leverage th Enum type
 * `The first value of an Enum is the default value`
 * Enum must start by the tag 0 (which is the default value)
+
+### Example
+
+```go
+// simple.proto
+
+syntax = "proto3";
+
+package simple;
+option go_package="simple/simplepb";
+
+message SimpleMessage {
+  int32 id = 1;
+  bool is_simple = 2;
+  string name = 3;
+  repeated int32 simple_list = 4;
+}
+```
+
+```console
+> protoc -I . --go_out=. simple/simplepb/simple.proto
+```
+
+```go
+// main.go
+func main() {
+	sp := doSimple()
+}
+
+func doSimple() *simplepb.SimpleMessage {
+	sp := simplepb.SimpleMessage{
+		Id: 12345,
+		IsSimple: true,
+		Name: "My Simple Message",
+		SimpleList: []int32{1, 2, 3, 4},
+	}
+
+	fmt.Println(sp)
+
+	sp.Name = "I renamed you"
+	fmt.Println(sp)
+
+	fmt.Println("The ID is: ", sp.GetId())
+
+	return &sp
+}
+```
+
+```bash
+❯ go run main.go
+0 [] 12345 true My Simple Message [1 2 3 4]
+0 [] 12345 true I renamed you [1 2 3 4]
+The ID is:  12345
+```
+
+Check out the [GitHub repository](https://github.com/younghyun-ahn/go-etc/tree/master/protobuf) for more info.
