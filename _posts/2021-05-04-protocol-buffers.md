@@ -3,7 +3,21 @@ layout: post
 title: "Protocol Buffers 3"
 ---
 
-## CSV (Comma Separated Values)
+Need to think about data model and efficiency of the API. 
+
+* JSON / XML / Something Binary
+* How much data do I get out of one call? 
+* Too much data
+* Too little data -> many API calls?
+* Latency
+* Scalability to 1000s of clients
+* Load balancing
+* Inter operability with many languages
+* Authenticatin, Monitoring, Logging
+
+## An Evolution of data type
+
+### CSV (Comma Separated Values)
 
 __Advantegs__:
 * Easy to parse
@@ -15,7 +29,7 @@ __Disadvantages:__
 * Parsing becomes tricky when data contains commas
 * Column names may or may not be there
 
-## Relational tables definitions
+### Relational tables definitions
 
 __Advantages:__
 * Data is fully typed
@@ -25,7 +39,7 @@ __Disadvantages:__
 * Data has to be flat
 * Data is stored in a database, and data definition will be different for each database
 
-## JSON (JavaScript Object Notation)
+### JSON (JavaScript Object Notation)
 
 __Advantages:__
 * Data can take any form (arrays, nested elements)
@@ -38,7 +52,7 @@ __Disadvantages:__
 * JSON Objects can be quite big in size because of repeated keys
 * No comments, metadata, documentation
 
-## Protocol Buffers
+### Protocol Buffers
 
 Protocol Buffers is defined by a .proto text file. You can easily read it and understand it as a human.
 
@@ -56,11 +70,11 @@ __Disadvantages:__
 * Protobuf support for some languages might be lacking (but the amin ones is fine)
 * Can't "open" the serialized data with a text editor (because it's compressed and serialised)
 
-### To share data accross languages!
+#### To share data accross languages!
 
 ![screenshot](../../../assets/images/protocol_buffers_accross_language.png)
 
-### Message structure
+#### Message structure
 
 ```go
 // We are using proto3
@@ -75,7 +89,7 @@ message MyMessage {
 }
 ```
 
-### Default Vlaues for fields
+#### Default Vlaues for fields
 
 All fields, if not specified or unknown, will take a default value
 
@@ -86,13 +100,13 @@ All fields, if not specified or unknown, will take a default value
 * enum: first value
 * repeated: empty list
 
-### Enums
+#### Enums
 
 * If you know all the values a field can take in advance, you can leverage th Enum type
 * `The first value of an Enum is the default value`
 * Enum must start by the tag 0 (which is the default value)
 
-### Example
+#### Example
 
 ```go
 // simple.proto
