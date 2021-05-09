@@ -11,16 +11,16 @@ title: "Singal Handle"
 
 출처: [www.quora.com](https://www.quora.com/What-is-the-difference-between-the-SIGINT-and-SIGTERM-signals-in-Linux-What%E2%80%99s-the-difference-between-the-SIGKILL-and-SIGSTOP-signals)
 
-
 ## 시그널 처리 유형
+
 * 종료
 * 무시
 * 코어 덤프
 * 중단
 * 재시작
 
-
 ## 시그널 정보
+
 ```terminal
 ❯ kill -l
 HUP INT QUIT ILL TRAP ABRT EMT FPE KILL BUS SEGV SYS PIPE ALRM TERM URG STOP TSTP CONT CHLD TTIN TTOU IO XCPU XFSZ VTALRM PROF WINCH INFO USR1 USR2
@@ -110,7 +110,5 @@ awaiting signal
 ^Cinterrupt
 existing
 ```
-
-
 
 Check out the [GitHub repository](https://github.com/younghyun-ahn/go-etc/blob/master/signal_handle/main.go) for more info.
